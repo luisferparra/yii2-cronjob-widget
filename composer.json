@@ -2,7 +2,7 @@
     "name": "sharkom/yii2-cronjob-widget",
     "description": "module-starter Module for Sharkom Intranet",
     "type": "yii2-extension",
-    "license": "commercial",
+    "license": "MIT",
     "authors": [
         {
             "name": "Andrea Gava",
