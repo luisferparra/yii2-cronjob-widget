@@ -13,7 +13,7 @@ $(document).on("click", ".cronjob-widget", function(){
    }
 
     $("#cronjob-modal").modal('show');
-    $("#crongen").html("<div id='cron-generator'></div><div><br>Oppure componi manualmente il cronjob:<input type='text' id='manual-cron' class='form-control'></div>");
+    $("#crongen").html("<div id='cron-generator'></div><div><br>Or manually compose the cronjob:<input type='text' id='manual-cron' class='form-control'></div>");
 
     $("#manual-cron").on("change", function () {
         $this.val($(this).val());
