@@ -56,10 +56,10 @@ class CronJob extends InputWidget
     public function renderModal(){
         ob_start();
         Modal::begin([
-            'header' => '<h3>Componi il cronjob</h3>',
+            'header' => '<h3>Schedule CronJob</h3>',
             'id'=>'cronjob-modal',
             'footer' => '<div class="form-group">
-                            <button type="button" class="btn btn-success close-cronjob">Applica</button> 
+                            <button type="button" class="btn btn-success close-cronjob">Accept</button> 
                          </div>'
         ]);
 
