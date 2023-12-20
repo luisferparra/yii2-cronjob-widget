@@ -46,21 +46,21 @@
             itemWidth : 30,
             columns   : 4,
             rows      : undefined,
-            title     : "Minuti dopo l'ora"
+            title     : "Minutes past the hour"
         },
         timeHourOpts : {
             minWidth  : 100, // only applies if columns and itemWidth not set
             itemWidth : 20,
             columns   : 2,
             rows      : undefined,
-            title     : "Ora"
+            title     : "Hour"
         },
         domOpts : {
             minWidth  : 100, // only applies if columns and itemWidth not set
             itemWidth : 30,
             columns   : undefined,
             rows      : 10,
-            title     : "Giorno del mese"
+            title     : "Day of the Month"
         },
         monthOpts : {
             minWidth  : 100, // only applies if columns and itemWidth not set
@@ -81,7 +81,7 @@
             itemWidth : 20,
             columns   : 4,
             rows      : undefined,
-            title     : "Minuto"
+            title     : "Minute"
         },
         effectOpts : {
             openSpeed      : 400,
@@ -124,45 +124,45 @@
 
     // options for months
     var str_opt_month = "";
-    var months = ["Gennaio", "Febbraio", "Marzo", "Aprile",
-                  "Maggio", "Giugno", "Luglio", "Agosto",
-                  "Settembre", "Ottobre", "Novembre", "Dicembre"];
+    var months = ["January", "February", "March", "April",
+                  "May", "June", "July", "August",
+                  "September", "October", "November", "December"];
     for (var i = 0; i < months.length; i++) {
         str_opt_month += "<option value='"+(i+1)+"'>" + months[i] + "</option>\n";
     }
 
     // options for day of week
     var str_opt_dow = "";
-    var days = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì",
-                "Venerdì", "Sabato"];
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+                "Friday", "Saturday"];
     for (var i = 0; i < days.length; i++) {
         str_opt_dow += "<option value='"+i+"'>" + days[i] + "</option>\n";
     }
 
     // options for period
     var str_opt_period = "";
-    var periods = ["minuto", "ora", "giorno", "settimana", "mese", "anno"];
+    var periods = ["minute", "hour", "day", "week", "month", "year"];
     for (var i = 0; i < periods.length; i++) {
         str_opt_period += "<option value='"+periods[i]+"'>" + periods[i] + "</option>\n";
     }
 
     // display matrix
     var toDisplay = {
-        "minuto" : [],
-        "ora"   : ["mins"],
-        "giorno"    : ["time"],
-        "settimana"   : ["dow", "time"],
-        "mese"  : ["dom", "time"],
-        "anno"   : ["dom", "month", "time"]
+        "minute" : [],
+        "hour"   : ["mins"],
+        "day"    : ["time"],
+        "week"   : ["dow", "time"],
+        "month"  : ["dom", "time"],
+        "year"   : ["dom", "month", "time"]
     };
 
     var combinations = {
-        "minuto" : /^(\*\s){4}\*$/,                    // "* * * * *"
-        "ora"   : /^\d{1,2}\s(\*\s){3}\*$/,           // "? * * * *"
-        "giorno"    : /^(\d{1,2}\s){2}(\*\s){2}\*$/,      // "? ? * * *"
-        "settimana"   : /^(\d{1,2}\s){2}(\*\s){2}\d{1,2}$/, // "? ? * * ?"
-        "mese"  : /^(\d{1,2}\s){3}\*\s\*$/,           // "? ? ? * *"
-        "anno"   : /^(\d{1,2}\s){4}\*$/                // "? ? ? ? *"
+        "minute" : /^(\*\s){4}\*$/,                    // "* * * * *"
+        "hour"   : /^\d{1,2}\s(\*\s){3}\*$/,           // "? * * * *"
+        "day"    : /^(\d{1,2}\s){2}(\*\s){2}\*$/,      // "? ? * * *"
+        "week"   : /^(\d{1,2}\s){2}(\*\s){2}\d{1,2}$/, // "? ? * * ?"
+        "month"  : /^(\d{1,2}\s){3}\*\s\*$/,           // "? ? ? * *"
+        "year"   : /^(\d{1,2}\s){4}\*$/                // "? ? ? ? *"
     };
 
     // ------------------ internal functions ---------------
@@ -237,31 +237,31 @@
         var min = hour = day = month = dow = "*";
         var selectedPeriod = b["period"].find("select").val();
         switch (selectedPeriod) {
-            case "minuto":
+            case "minute":
                 break;
 
-            case "ora":
+            case "hour":
                 min = b["mins"].find("select").val();
                 break;
 
-            case "giorno":
+            case "day":
                 min  = b["time"].find("select.cron-time-min").val();
                 hour = b["time"].find("select.cron-time-hour").val();
                 break;
 
-            case "settimana":
+            case "week":
                 min  = b["time"].find("select.cron-time-min").val();
                 hour = b["time"].find("select.cron-time-hour").val();
                 dow  =  b["dow"].find("select").val();
                 break;
 
-            case "mese":
+            case "month":
                 min  = b["time"].find("select.cron-time-min").val();
                 hour = b["time"].find("select.cron-time-hour").val();
                 day  = b["dom"].find("select").val();
                 break;
 
-            case "anno":
+            case "year":
                 min  = b["time"].find("select.cron-time-min").val();
                 hour = b["time"].find("select.cron-time-hour").val();
                 day  = b["dom"].find("select").val();
@@ -306,7 +306,7 @@
             }
 
             block["period"] = $("<span class='cron-period'>"
-                    + "Ogni <select name='cron-period'>" + custom_periods
+                    + "Each <select name='cron-period'>" + custom_periods
                     + str_opt_period + "</select> </span>")
                 .appendTo(this)
                 .data("root", this);
@@ -317,7 +317,7 @@
             if (o.useGentleSelect) select.gentleSelect(eo);
 
             block["dom"] = $("<span class='cron-block cron-block-dom'>"
-                    + " il <select name='cron-dom'>" + str_opt_dom
+                    + " the <select name='cron-dom'>" + str_opt_dom
                     + "</select> </span>")
                 .appendTo(this)
                 .data("root", this);
@@ -326,7 +326,7 @@
             if (o.useGentleSelect) select.gentleSelect(o.domOpts);
 
             block["month"] = $("<span class='cron-block cron-block-month'>"
-                    + " di <select name='cron-month'>" + str_opt_month
+                    + " of <select name='cron-month'>" + str_opt_month
                     + "</select> </span>")
                 .appendTo(this)
                 .data("root", this);
@@ -353,7 +353,7 @@
             if (o.useGentleSelect) select.gentleSelect(o.dowOpts);
 
             block["time"] = $("<span class='cron-block cron-block-time'>"
-                    + " alle <select name='cron-time-hour' class='cron-time-hour'>" + str_opt_hid
+                    + " to <select name='cron-time-hour' class='cron-time-hour'>" + str_opt_hid
                     + "</select>:<select name='cron-time-min' class='cron-time-min'>" + str_opt_mih
                     + " </span>")
                 .appendTo(this)
