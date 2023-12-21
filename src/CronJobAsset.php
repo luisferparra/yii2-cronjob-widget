@@ -1,11 +1,11 @@
 <?php
 
-namespace sharkom\widgets;
+namespace luisferparra\widgets;
 use yii\web\AssetBundle;
 
 class CronJobAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sharkom/yii2-cronjob-widget/src/js';
+    public $sourcePath = '@vendor/luisferparra/yii2-cronjob-widget/src/js';
     public $css = [
         'jquery-cron.css',
     ];
