@@ -14,7 +14,7 @@ composer require luisferparra/yii2-cronjob-widget
 
 ```
 <?php
-use sharkom\widgets\CronJob;
+use luisferparra\widgets\CronJob;
 ?>
 <?php CronJob::widget([
     'model' => $model, 
@@ -27,7 +27,7 @@ use sharkom\widgets\CronJob;
 ### Use with Form
 ```
 <?php
-use sharkom\widgets\CronJob;
+use luisferparra\widgets\CronJob;
 ?>
 <?php CronJob::widget([
     'name' => $model, 
