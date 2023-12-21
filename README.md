@@ -40,6 +40,6 @@ use sharkom\widgets\CronJob;
 
 This widget is based on another widget whose texts are in Italian. I have only made the adaptation of these texts to English necessary for my project. It is not Multilanguage
 
-https://github.com/SharKom/yii2-cron
+[https://github.com/SharKom/yii2-cron](https://github.com/SharKom/yii2-cronjob-widget)https://github.com/SharKom/yii2-cronjob-widget
 
 
