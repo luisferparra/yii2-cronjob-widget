@@ -1,11 +1,11 @@
 <?php
-namespace sharkom\widgets;
+namespace luisferparra\widgets;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\widgets\InputWidget;
-use sharkom\widgets\CronJobAsset;
+use luisferparra\widgets\CronJobAsset;
 use yii\bootstrap\Modal;
 
 class CronJob extends InputWidget
